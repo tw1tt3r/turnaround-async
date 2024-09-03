@@ -2,12 +2,12 @@ import time
 import random
 
 class Solver:
-    async def __init__(self, playwright, proxy="", headless=True):
+    def __init__(self, playwright, proxy="", headless=True):
         self.playwright = playwright
         self.proxy = proxy
         self.headless = headless
 
-        await self.start_browser(self.playwright)
+        
             
     async def terminate(self):
         await self.browser.close()
