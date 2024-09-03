@@ -60,7 +60,7 @@ class Solver:
             self.random_y = random.randint(0, self.window_height)
             iterations += 1
 
-            self.move_to(self.random_x, self.random_y)
+            await self.move_to(self.random_x, self.random_y)
             self.current_x = self.random_x
             self.current_y = self.random_y
             elem = await self.page.query_selector("[name=cf-turnstile-response]")
@@ -82,7 +82,7 @@ class Solver:
 
         x = iframe.bounding_box()["x"] + random.randint(5, 12)
         y = iframe.bounding_box()["y"] + random.randint(5, 12)
-        self.move_to(x, y)
+        await self.move_to(x, y)
         self.current_x = x
         self.current_y = y
         framepage = await iframe.content_frame()
@@ -114,7 +114,7 @@ class Solver:
             self.random_y = random.randint(0, self.window_height)
             iterations += 1
 
-            self.move_to(self.random_x, self.random_y)
+            await self.move_to(self.random_x, self.random_y)
             self.current_x = self.random_x
             self.current_y = self.random_y
             elem = await self.page.query_selector("[name=cf-turnstile-response]")
