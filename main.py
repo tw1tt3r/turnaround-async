@@ -19,6 +19,7 @@ async def solve():
     proxy = json_data.get("proxy","")
     async with playwright.async_api.async_playwright() as p:
         s = await solver.Solver(p,proxy=proxy,headless=True)
+        await s.start_browser(p)
         token = await s.solve(url, sitekey, invisible)
         await s.terminate()
         return (await make_response(token))
