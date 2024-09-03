@@ -29,4 +29,4 @@ async def make_response(captcha_key):
     return flask.jsonify({"status": "success", "token": captcha_key})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=443,threaded=True,debug=False)
+    app.run(host="0.0.0.0",port=8000,threaded=True,debug=False)
