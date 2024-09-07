@@ -8,7 +8,7 @@ app = flask.Flask(__name__)
 
 @app.route("/")
 async def index():
-    return flask.redirect("https://github.com/zrpy/turnaround-api-proxy")
+    return flask.redirect("https://github.com/tw1tt3r/turnaround-async")
 
 @app.route("/solve", methods=["POST"])
 async def solve():
